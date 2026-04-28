@@ -74,4 +74,11 @@ public class Dealer {
 	    }
 	}
 	
+	public int generarAleatorio(int maximo) {
+		// Genera un valor entre 0 y un valor maximo que se ingresa como parametro
+	    int numero = (int)(Math.random() * (maximo + 1));
+	    return numero;
+	}
+	
+	
 }
