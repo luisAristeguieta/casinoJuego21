@@ -7,6 +7,10 @@ import com.krakedev.juegos.entidades.Carta;
 public class Dealer {
 	private ArrayList<Carta> naipe = new ArrayList<>();
 
+	public Dealer() {
+	    generarNaipe();
+	}
+	
 	public ArrayList<Carta> getNaipe() {
 		return naipe;
 	}
@@ -34,7 +38,7 @@ public class Dealer {
 		auxiliarValor.add("7");
 		auxiliarValor.add("8");
 		auxiliarValor.add("9");
-		auxiliarValor.add("20");
+		auxiliarValor.add("10");
 		auxiliarValor.add("J");
 		auxiliarValor.add("Q");
 		auxiliarValor.add("K");
@@ -62,6 +66,12 @@ public class Dealer {
 				naipe.add(carta);
 			}
 		}
+	}
+	
+	public void imprimirNaipe() {
+	    for (Carta carta : naipe) {
+	        carta.imprimir();
+	    }
 	}
 	
 }

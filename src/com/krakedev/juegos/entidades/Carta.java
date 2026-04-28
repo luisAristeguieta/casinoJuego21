@@ -31,7 +31,7 @@ public class Carta {
 
 	public void imprimir() {
 		String mensaje;
-		mensaje = "|Valor: " + valor + " |Valor Juego: " + valorJuego + " |Palo: " + palo;
+		mensaje = valor + " - " + palo + ", valorJuego =  "+ valorJuego;
 		System.out.println(mensaje);
 	}
 
