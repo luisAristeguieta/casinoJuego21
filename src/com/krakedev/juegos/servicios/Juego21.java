@@ -53,7 +53,47 @@ public class Juego21 {
 	public void repartirRonda() {
 	    for (Jugador jugador : jugadores) {
 	        repartirCarta(jugador);
+	        calcularTotal(); // Agregado posterior
 	    }
 	}
+	
+	public void calcularTotal() {
+		// Operacion aristmetica que acumula el valor total por jugador
+	    for (Jugador jugador : jugadores) {
+	        int total = 0;
+	        for (Carta carta : jugador.getCartas()) {
+	            total += carta.getValorJuego();
+	        }
+	        
+	        jugador.setPuntajeCartas(total);
+	    }
+	}
+	
+	public ArrayList<Jugador> validarGanador() {
+		// Recorre la lista de jugadores y retorna aquellos cuyo puntaje es igual a 21
+	    ArrayList<Jugador> ganadores = new ArrayList<>();
+
+	    for (Jugador jugador : jugadores) {
+	        if (jugador.getPuntajeCartas() == 21) {
+	            ganadores.add(jugador);
+	        }
+	    }
+	    return ganadores;
+	}
+	
+	public ArrayList<Jugador> jugar() {
+		// Ejecuta hasta 3 rondas del juego, repartiendo cartas y validando ganadores
+		// Si uno o más jugadores alcanzan 21, se detiene y retorna la lista de ganadores
+	    ArrayList<Jugador> ganadores = new ArrayList<>();
+	    for (int i = 0; i < 3; i++) {
+	        repartirRonda();
+	        ganadores = validarGanador();
+	        if (ganadores.size() > 0) {
+	            break;
+	        }
+	    }
+	    return ganadores;
+	}
+	
 		
 }
