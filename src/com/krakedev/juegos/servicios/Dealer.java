@@ -8,9 +8,9 @@ public class Dealer {
 	private ArrayList<Carta> naipe = new ArrayList<>();
 
 	public Dealer() {
-	    generarNaipe();
+		generarNaipe();
 	}
-	
+
 	public ArrayList<Carta> getNaipe() {
 		return naipe;
 	}
@@ -18,16 +18,17 @@ public class Dealer {
 	public void setNaipe(ArrayList<Carta> naipe) {
 		this.naipe = naipe;
 	}
-	
+
 	public void generarNaipe() {
-		// Genera una lista que recorra los palos  luego los valores para que haga la combinacion:
-		
+		// Genera una lista que recorra los palos luego los valores para que haga la
+		// combinacion:
+
 		ArrayList<String> auxiliarPalos = new ArrayList<>();
 		auxiliarPalos.add("T");
 		auxiliarPalos.add("CN");
 		auxiliarPalos.add("CR");
 		auxiliarPalos.add("D");
-		
+
 		ArrayList<String> auxiliarValor = new ArrayList<>();
 		auxiliarValor.add("A");
 		auxiliarValor.add("2");
@@ -42,7 +43,7 @@ public class Dealer {
 		auxiliarValor.add("J");
 		auxiliarValor.add("Q");
 		auxiliarValor.add("K");
-				
+
 //		for (int i=0;i<auxiliarPalos.size();i++) {
 //			for (int a=0;a<auxiliarValor.size();a++) {
 //				
@@ -55,30 +56,44 @@ public class Dealer {
 //			}
 //		}
 //		System.out.println(naipe.size());
-		
+
 		for (String palo : auxiliarPalos) {
-			for(String valor : auxiliarValor) {
+			for (String valor : auxiliarValor) {
 				Carta carta = new Carta();
-				
+
 				carta.setPalo(palo);
 				carta.setValor(valor);
-				
+
 				naipe.add(carta);
 			}
 		}
 	}
-	
+
 	public void imprimirNaipe() {
-	    for (Carta carta : naipe) {
-	        carta.imprimir();
-	    }
+		for (Carta carta : naipe) {
+			carta.imprimir();
+		}
 	}
-	
+
 	public int generarAleatorio(int maximo) {
 		// Genera un valor entre 0 y un valor maximo que se ingresa como parametro
-	    int numero = (int)(Math.random() * (maximo + 1));
-	    return numero;
+		int numero = (int) (Math.random() * (maximo + 1));
+		// int numero = (int) Math.round(Math.random() * maximo);
+		return numero;
+	}
+
+	public Carta entregarCarta() {
+		// Geenera la posición aleatoria, se tiene tamaño de la lista y posiciones,
+		// usando el -1 porque la lista es de 52 cartas
+		// pero las posiciones incluiria el cero del 0 al 51 teniendo 52 opciones y
+		// luego se quita esa posicion que representa las 52 cartas
+
+		int posicion = generarAleatorio(naipe.size() - 1);
+		Carta carta = naipe.get(posicion);
+		naipe.remove(posicion);
+		return carta;
 	}
 	
 	
+
 }

@@ -8,7 +8,7 @@ public class TestImprimirNaipe {
 		// imprime las cartas generadas en la lista de naipe
 		
 		Dealer elGanador = new Dealer();
-		elGanador.generarNaipe();
+		// elGanador.generarNaipe();// Al agregar el contructor se tiene el metodo generarNaipe 
 		elGanador.imprimirNaipe();
 
 	}
