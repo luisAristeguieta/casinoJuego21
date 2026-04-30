@@ -95,5 +95,13 @@ public class Juego21 {
 	    return ganadores;
 	}
 	
+	// Metodo adicional que limpia cartas y puntaje de los jugadores
+	public void reiniciarJugadores() {
+	    for (Jugador jugador : jugadores) {
+	        jugador.getCartas().clear();
+	        jugador.setPuntajeCartas(0);
+	    }
+	}
+	
 		
 }

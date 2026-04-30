@@ -40,4 +40,5 @@ public class Jugador {
 
 		System.out.println("*******************");
 	}
+	
 }
