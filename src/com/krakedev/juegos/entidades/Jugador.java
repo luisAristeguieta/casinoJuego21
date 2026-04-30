@@ -6,6 +6,18 @@ public class Jugador {
 	private String nickname;
 	private ArrayList<Carta> cartas = new ArrayList<>();
 	
+	
+	public Jugador(String nickname) {
+	    this.nickname = nickname;
+	}
+	public String getNickname() {
+	    return nickname;
+	}
+
+	public ArrayList<Carta> getCartas() {
+	    return cartas;
+	}
+	
 	public void recibirCarta(Carta carta) {
 		cartas.add(carta);
 	} 

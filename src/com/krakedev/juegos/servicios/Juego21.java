@@ -9,6 +9,14 @@ public class Juego21 {
 	private ArrayList<Jugador> jugadores = new ArrayList<>();
 	private Dealer dealer;
 	
+	public ArrayList<Jugador> getJugadores() {
+	    return jugadores;
+	}
+
+	public Dealer getDealer() {
+	    return dealer;
+	}
+	
 	public void cargarValores() {
 	// Asigna el valor del valorJuego que lo condiciona al valor de la carta en numeros: 
 		
